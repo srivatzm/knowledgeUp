@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CodeAndRun</title>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!--Inline CSS -->
+  <style>
+  #pdate {
+      color: orange;
+	  font-size: 20px;
+  }
+  </style>
+  
+  <!-- External Javascript -->
+  <script src="myJScript.js"></script>
+  
+  <script src="jquery-3.6.4.js">  
+  </script>
+  
+  <script>
+  $(document).ready(function(){
+	$("#ajaxMe").click(function(){
+		$(this).load("textfile.txt");
+	})
+  });
+  </script>
+  <!--Inline javascript -->
+  <script language="javascript">
+  
+  window.onload=function() {
+  //Today's Day 
+  var dates = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+  var today = new Date().getDay();
+  var todayText = dates[today];
+  document.getElementById("pdate").innerHTML="Today is "+todayText+".";
+  }  
+  </script>
+</head>
+
+<body>
+  <header>
+    Welcome to Code And Run.
+    Code and Run HTMLs dynamically.
+  </header>
+  <p spellcheck="true" contenteditable="true">
+    Hleol How aree yuo? If you find mistake, you can rectify or re-edit me..
+  </p>
+  <br>
+  <p id="pdate"></p>
+  <button onclick="playOrPause()">> / ||</button>
+  <button onclick="normalSize()">
+    <<>>
+  </button>
+  <button onclick="largeSize()">
+    <<<<>>>>
+  </button><br><br>
+  <video id="road" width=150>
+    <source src="sample-5s.mp4" type="video/mp4" />
+  </video>
+  <br><img src="sample.jpg" draggable="true" id="dragme" ondragstart="drag(event)" height=100 width=200></img>
+  <br />
+  <div>
+    <div id="dropzone" class="height100 width250" ondrop="drop(event)" ondragover="allowDrop(event)">&nbsp;</div>
+	<div id="searchDiv" class="height100 width250"></div>
+	<button onclick="loadSearchAjax()" style="position: relative;left: 260px;">Load Ajax Above.</button><br>
+  </div>    
+    <button id="findme" onclick="myLocation()" style="position: absolute;left: 5px;top: 535px;">Where am i?</button><p id="myloc" style="position: relative;left: 120px;top: -30px;">Location details:</p>
+    <button onclick="counter()" style="position: absolute;left: 5px;top: 575px;">Button Click Count</button><p id="number" style="position: relative;left: 130px;top: -10px">Hit Details.</p><br>
+    <p id="marq" style="position: relative;left: 0px;">Marquee by Interval, not by Marquee tag.</p>  
+  <div id="main" style="position: relative">
+  Type some input : <input type="text" id="inp"><br>
+  Manipulated Text: <input type="text" id="out"><br>
+  <button onclick="convert('u')">ToUpper</button>
+  <button onclick="convert('l')">ToLower</button>
+  </div>
+  <br>
+  <div id="ajaxMe">Click Me 4 jQuery</div>
+  <br>
+
+  <footer>
+    All rights reserved !!
+  </footer>
+</body>
+
+</html>
